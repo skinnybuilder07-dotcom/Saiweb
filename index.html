@@ -19,6 +19,7 @@
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%23F4D35E' stroke='%23D4AF37' stroke-width='3'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia,serif' font-size='38' font-weight='700' fill='%23151515'%3ES%3C/text%3E%3C/svg%3E">
     <link rel="stylesheet" href="css/style.css">
 
+    
     <!-- Bootstrap 5 JS Bundle & Consolidated Custom JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
     <script src="js/main.js" defer></script>
@@ -56,9 +57,16 @@
     </header>
 
     <main>
-        <!-- Hero Section -->
+        <!-- Hero Section with Background Video -->
         <section class="hero-section">
-            <div class="container">
+            <div class="hero-video-wrap">
+                <video autoplay muted loop playsinline class="hero-bg-video" poster="assets/images/hero.jpg">
+                    <source src="assets/videos/hero.webm" type="video/webm">
+                </video>
+                <div class="hero-video-overlay"></div>
+            </div>
+
+            <div class="container hero-content-wrap">
                 <div class="row">
                     <div class="col-12 col-lg-8">
                         <span class="hero-label"><i class="bi bi-gem me-1"></i> SAI FITNESS</span>
@@ -66,37 +74,179 @@
                         <p class="hero-subtitle">An elevated athletic environment engineered for high performers. Experience calm luxury surroundings, precision strength apparatus, and restorative recovery in a private fitness sanctuary.</p>
                         <div class="d-flex flex-wrap gap-3">
                             <a href="about.html" class="btn btn-primary"><i class="bi bi-compass me-1"></i> Discover the Gym</a>
-                            <a href="contact.html" class="btn btn-outline-light"><i class="bi bi-calendar2-check me-1"></i> Schedule a Visit</a>
+                            <a href="#join-journey" class="btn btn-outline-light"><i class="bi bi-calendar2-check me-1"></i> Schedule a Visit</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- About Preview Section -->
-        <section id="about-preview" class="section-padding bg-white">
+        <!-- Welcome Section – Sofitel Inspired Layout -->
+        <section id="welcome" class="section-padding bg-white welcome-editorial">
             <div class="container">
                 <div class="row align-items-center g-5">
                     <div class="col-12 col-lg-6 reveal-on-scroll">
-                        <div class="editorial-image-frame">
-                            <img src="assets/images/about.jpg" alt="Sai Fitness private oak-paneled training sanctuary" class="img-fluid">
+                        <span class="welcome-kicker"><i class="bi bi-gem me-1"></i> WELCOME TO SAI FITNESS GYM</span>
+                        <h2 class="welcome-headline">Where Strength Meets Discipline</h2>
+                        <blockquote class="welcome-quote">
+                            "Physical conditioning elevated beyond standard workouts into an art of deliberate practice and calm architectural luxury."
+                        </blockquote>
+                        <p class="text-secondary mb-3">Sai Fitness Gym was conceived as a private athletic sanctuary where physical conditioning harmonizes with calm luxury. We eschew crowded commercial spaces in favor of a serene, meticulously maintained environment designed for uninterrupted focus.</p>
+                        <p class="text-secondary mb-4">Our commitment is simple: provide an inspiring training atmosphere equipped with custom biomechanical apparatus, attentive guidance, and serene recovery spaces that empower members to develop lifelong, healthy fitness habits.</p>
+
+                        <div class="welcome-hallmarks">
+                            <div class="hallmark-item">
+                                <i class="bi bi-shield-check"></i>
+                                <div>
+                                    <h4>Sanctuary Ambiance</h4>
+                                    <p>Uncrowded zones and warm acoustics designed for pure focus.</p>
+                                </div>
+                            </div>
+                            <div class="hallmark-item">
+                                <i class="bi bi-sliders"></i>
+                                <div>
+                                    <h4>Biomechanical Precision</h4>
+                                    <p>Bespoke equipment engineered for smooth joint mechanics.</p>
+                                </div>
+                            </div>
+                            <div class="hallmark-item">
+                                <i class="bi bi-heart-pulse"></i>
+                                <div>
+                                    <h4>Habit Architecture</h4>
+                                    <p>Structured training rhythms that cultivate lasting wellbeing.</p>
+                                </div>
+                            </div>
+                            <div class="hallmark-item">
+                                <i class="bi bi-water"></i>
+                                <div>
+                                    <h4>Restorative Recovery</h4>
+                                    <p>Hydrotherapy plunge and serene mobility suites for revitalization.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-4 pt-2 d-flex flex-wrap gap-3">
+                            <a href="about.html" class="btn btn-outline-primary">Explore Our Philosophy</a>
+                            <a href="#join-journey" class="btn btn-primary">Begin Your Journey</a>
                         </div>
                     </div>
+
                     <div class="col-12 col-lg-6 reveal-on-scroll">
-                        <span class="section-label">EXCLUSIVITY &amp; ELEGANCE</span>
-                        <h2 class="section-title">More Than a Gym</h2>
-                        <p class="text-secondary">Sai Fitness Gym was conceived as a private athletic sanctuary where physical conditioning harmonizes with calm luxury. We eschew crowded commercial spaces in favor of a serene, meticulously maintained environment.</p>
-                        <p class="text-secondary">Our commitment is simple: provide an inspiring training atmosphere equipped with world-class biomechanical apparatus, attentive guidance, and serene recovery spaces.</p>
+                        <div class="welcome-frame-dual">
+                            <div class="editorial-image-frame">
+                                <video autoplay muted loop playsinline class="img-fluid welcome-img-main welcome-video-media" poster="assets/images/about.jpg" aria-label="Sai Fitness athletic conditioning in progress">
+                                    <source src="assets/videos/welcome.webm" type="video/webm">
+                                </video>
+                            </div>
+                            <div class="welcome-badge-luxury">
+                                <div class="badge-number">100%</div>
+                                <div class="fw-bold small text-uppercase text-dark mt-1">Private Sanctuary Focus</div>
+                                <p class="small text-muted mb-0 mt-1">Low-density member capacity dedicated to excellence and personal discipline.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                        <ul class="bullet-list-luxury mt-4 mb-4">
-                            <li>Private training sanctuary designed for uninterrupted focus</li>
-                            <li>Custom-engineered biomechanical strength &amp; conditioning equipment</li>
-                            <li>Guidance from seasoned strength, mobility, and wellness specialists</li>
-                            <li>Panoramic cardio suite overlooking city parkland</li>
-                            <li>Marble hydrotherapy plunge lounge &amp; restorative recovery suites</li>
-                        </ul>
+        <!-- Category Section: Explore Our Fitness Categories -->
+        <section id="categories" class="section-padding bg-pale-yellow">
+            <div class="container">
+                <div class="text-center mb-5 reveal-on-scroll">
+                    <span class="section-label">CURATED DISCIPLINES</span>
+                    <h2 class="section-title">Explore Our Fitness Categories</h2>
+                    <p class="section-subtitle">Six distinct training dimensions engineered to develop comprehensive strength, athletic power, and sustainable vitality.</p>
+                </div>
 
-                        <a href="about.html" class="btn btn-outline-primary">Learn About Sai Fitness</a>
+                <div class="row g-4">
+                    <!-- Category 1: Strength Training -->
+                    <div class="col-12 col-md-6 col-lg-4 reveal-on-scroll">
+                        <div class="category-card">
+                            <div class="category-media">
+                                <img src="assets/images/strength.jpg" alt="Strength Training at Sai Fitness Gym">
+                                <span class="category-pill">Power &amp; Precision</span>
+                            </div>
+                            <div class="category-body">
+                                <h3 class="category-title">Strength Training</h3>
+                                <p class="category-desc">Custom Olympic platforms, calibrated bars, and biomechanically aligned weight stations designed for foundational power and bone density.</p>
+                                <a href="about.html" class="category-link">Learn More <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Category 2: Weight Training -->
+                    <div class="col-12 col-md-6 col-lg-4 reveal-on-scroll">
+                        <div class="category-card">
+                            <div class="category-media">
+                                <img src="assets/images/about.jpg" alt="Weight Training at Sai Fitness Gym">
+                                <span class="category-pill">Hypertrophy</span>
+                            </div>
+                            <div class="category-body">
+                                <h3 class="category-title">Weight Training</h3>
+                                <p class="category-desc">Refined dumbbell stations, cable towers, and selectorized resistance machines structured for muscle balance and progressive overload.</p>
+                                <a href="about.html" class="category-link">Learn More <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Category 3: Cardio Training -->
+                    <div class="col-12 col-md-6 col-lg-4 reveal-on-scroll">
+                        <div class="category-card">
+                            <div class="category-media">
+                                <img src="assets/images/hero.jpg" alt="Cardio Training at Sai Fitness Gym">
+                                <span class="category-pill">Endurance</span>
+                            </div>
+                            <div class="category-body">
+                                <h3 class="category-title">Cardio Training</h3>
+                                <p class="category-desc">Panoramic cardio deck with skyline views featuring curved running mills, low-impact rowers, and precision ergometers for metabolic health.</p>
+                                <a href="about.html" class="category-link">Learn More <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Category 4: Personal Training -->
+                    <div class="col-12 col-md-6 col-lg-4 reveal-on-scroll">
+                        <div class="category-card">
+                            <div class="category-media">
+                                <img src="assets/images/trainer1.jpg" alt="Personal Training at Sai Fitness Gym">
+                                <span class="category-pill">Bespoke Guidance</span>
+                            </div>
+                            <div class="category-body">
+                                <h3 class="category-title">Personal Training</h3>
+                                <p class="category-desc">Dedicated 1-on-1 performance coaching tailored to your individual biomechanics, goals, and daily habit architecture for guaranteed progress.</p>
+                                <a href="contact.html" class="category-link">Book Coach <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Category 5: Functional Fitness -->
+                    <div class="col-12 col-md-6 col-lg-4 reveal-on-scroll">
+                        <div class="category-card">
+                            <div class="category-media">
+                                <img src="assets/images/trainer2.jpg" alt="Functional Fitness at Sai Fitness Gym">
+                                <span class="category-pill">Mobility &amp; Agility</span>
+                            </div>
+                            <div class="category-body">
+                                <h3 class="category-title">Functional Fitness</h3>
+                                <p class="category-desc">Multi-planar training zones, kettlebells, turf lanes, and mobility apparatus engineered to improve joint longevity, balance, and athletic agility.</p>
+                                <a href="about.html" class="category-link">Learn More <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Category 6: General Fitness -->
+                    <div class="col-12 col-md-6 col-lg-4 reveal-on-scroll">
+                        <div class="category-card">
+                            <div class="category-media">
+                                <img src="assets/images/wellness.jpg" alt="General Fitness and Recovery at Sai Fitness Gym">
+                                <span class="category-pill">Holistic Wellbeing</span>
+                            </div>
+                            <div class="category-body">
+                                <h3 class="category-title">General Fitness</h3>
+                                <p class="category-desc">A holistic lifestyle protocol combining functional conditioning, core stability, and post-training hydrotherapy for everyday vitality.</p>
+                                <a href="about.html" class="category-link">Learn More <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -224,23 +374,23 @@
             </div>
         </section>
 
-        <!-- Fitness Environment Showcase & Gallery Preview -->
-        <section id="gallery-preview" class="section-padding bg-pale-yellow">
+        <!-- Our Fitness Gallery Section -->
+        <section id="gallery-preview" class="section-padding bg-white">
             <div class="container">
                 <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end gap-3 mb-5 reveal-on-scroll">
                     <div>
-                        <span class="section-label">FITNESS ENVIRONMENT</span>
-                        <h2 class="section-title mb-2">Inside Sai Fitness</h2>
-                        <p class="text-brand-muted mb-0 max-w-680">Explore our warm timber interiors, signature strength equipment, and serene wellness spaces. Select any image to view closer.</p>
+                        <span class="section-label">CURATED ATMOSPHERE</span>
+                        <h2 class="section-title mb-2">Our Fitness Gallery</h2>
+                        <p class="text-brand-muted mb-0 max-w-680">Explore our warm timber interiors, signature strength equipment, and serene wellness spaces. Select any image to view in detail.</p>
                     </div>
-                    <a href="gallery.html" class="btn btn-dark flex-shrink-0">View Full Gallery</a>
+                    <a href="gallery.html" class="btn btn-dark flex-shrink-0"><i class="bi bi-grid-3x3-gap me-1"></i> View All Gallery</a>
                 </div>
 
                 <div class="row g-4">
                     <div class="col-12 col-sm-6 col-lg-3 reveal-on-scroll">
                         <div class="gallery-card gallery-trigger" role="button" tabindex="0" data-image="assets/images/hero.jpg" data-title="Panoramic Cardio Suite" data-description="Natural skyline light paired with precision rowing and cardio apparatus.">
                             <div class="gallery-media">
-                                <img src="assets/images/hero.jpg" alt="Panoramic cardio suite with skyline view" class="gallery-img">
+                                <img src="assets/images/hero.jpg" alt="Panoramic cardio suite with skyline view" class="gallery-img" loading="lazy">
                                 <div class="gallery-overlay">
                                     <span class="badge badge-yellow">Interior</span>
                                     <span class="gallery-zoom-badge" aria-hidden="true"><i class="bi bi-arrows-fullscreen"></i></span>
@@ -256,7 +406,7 @@
                     <div class="col-12 col-sm-6 col-lg-3 reveal-on-scroll">
                         <div class="gallery-card gallery-trigger" role="button" tabindex="0" data-image="assets/images/strength.jpg" data-title="Free Weights &amp; Brass Racks" data-description="Architectural concrete and custom walnut-brass dumbbell stations.">
                             <div class="gallery-media">
-                                <img src="assets/images/strength.jpg" alt="Luxury dumbbell racks and free weights training hall" class="gallery-img">
+                                <img src="assets/images/strength.jpg" alt="Luxury dumbbell racks and free weights training hall" class="gallery-img" loading="lazy">
                                 <div class="gallery-overlay">
                                     <span class="badge badge-yellow">Equipment</span>
                                     <span class="gallery-zoom-badge" aria-hidden="true"><i class="bi bi-arrows-fullscreen"></i></span>
@@ -272,7 +422,7 @@
                     <div class="col-12 col-sm-6 col-lg-3 reveal-on-scroll">
                         <div class="gallery-card gallery-trigger" role="button" tabindex="0" data-image="assets/images/about.jpg" data-title="The Private Sanctuary" data-description="Oak-paneled private conditioning lounge with timber-handled weights.">
                             <div class="gallery-media">
-                                <img src="assets/images/about.jpg" alt="Oak-paneled private wellness and training studio" class="gallery-img">
+                                <img src="assets/images/about.jpg" alt="Oak-paneled private wellness and training studio" class="gallery-img" loading="lazy">
                                 <div class="gallery-overlay">
                                     <span class="badge badge-yellow">Studio</span>
                                     <span class="gallery-zoom-badge" aria-hidden="true"><i class="bi bi-arrows-fullscreen"></i></span>
@@ -288,7 +438,7 @@
                     <div class="col-12 col-sm-6 col-lg-3 reveal-on-scroll">
                         <div class="gallery-card gallery-trigger" role="button" tabindex="0" data-image="assets/images/wellness.jpg" data-title="Hydrotherapy &amp; Recovery Spa" data-description="Marble wellness suite with plunge pool and post-session relaxation beds.">
                             <div class="gallery-media">
-                                <img src="assets/images/wellness.jpg" alt="Marble wellness spa with plunge pool and loungers" class="gallery-img">
+                                <img src="assets/images/wellness.jpg" alt="Marble wellness spa with plunge pool and loungers" class="gallery-img" loading="lazy">
                                 <div class="gallery-overlay">
                                     <span class="badge badge-yellow">Recovery</span>
                                     <span class="gallery-zoom-badge" aria-hidden="true"><i class="bi bi-arrows-fullscreen"></i></span>
@@ -301,6 +451,172 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- Start Your Fitness Journey (Join Now Form Section) -->
+        <section id="join-journey" class="section-padding join-section">
+            <div class="container position-relative" style="z-index: 2;">
+                <div class="row align-items-center g-5">
+                    <div class="col-12 col-lg-5 reveal-on-scroll">
+                        <span class="section-label text-warning"><i class="bi bi-stars me-1"></i> MEMBERSHIP CONSULTATION</span>
+                        <h2 class="text-white display-5 font-heading mb-3">Start Your Fitness Journey</h2>
+                        <p class="text-white-50 mb-4">Step into an elevated training sanctuary designed for sustained discipline and wellbeing. Complete your profile details below to request a private club preview and bespoke fitness orientation.</p>
+
+                        <ul class="join-feature-list">
+                            <li><i class="bi bi-check2-circle"></i> Private biomechanical orientation session</li>
+                            <li><i class="bi bi-check2-circle"></i> Dedicated wellness and recovery suite access</li>
+                            <li><i class="bi bi-check2-circle"></i> Low-density member capacity for focused training</li>
+                            <li><i class="bi bi-check2-circle"></i> Complimentary tailored physical habit architecture</li>
+                        </ul>
+                    </div>
+
+                    <div class="col-12 col-lg-7 reveal-on-scroll">
+                        <div class="join-card">
+                            <h3 class="font-heading h3 mb-2">Request Your Private Membership Orientation</h3>
+                            <p class="text-muted small mb-4">Frontend demonstration form &bull; No payment or server submission required</p>
+
+                            <div id="join-feedback" class="join-feedback-banner d-none" role="alert">
+                                <div class="d-flex align-items-start gap-2">
+                                    <i class="bi bi-check-circle-fill text-success fs-5"></i>
+                                    <div>
+                                        <strong class="d-block mb-1">Thank you, <span class="join-feedback-name">Athlete</span>!</strong>
+                                        <p class="mb-0 small">Your consultation preview has been validated. Our concierge desk looks forward to welcoming you to Sai Fitness Gym.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <form id="join-form" novalidate>
+                                <div class="row g-3">
+                                    <div class="col-12 col-md-6">
+                                        <label for="join-name" class="form-label">Full Name <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" id="join-name" placeholder="e.g. Alexander Vance" required>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <label for="join-phone" class="form-label">Phone Number <span class="text-danger">*</span></label>
+                                        <input type="tel" class="form-control" id="join-phone" placeholder="e.g. +1 (800) 555-0192" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="join-email" class="form-label">Email Address <span class="text-danger">*</span></label>
+                                        <input type="email" class="form-control" id="join-email" placeholder="e.g. alexander@example.com" required>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <label for="join-goal" class="form-label">Fitness Goal <span class="text-danger">*</span></label>
+                                        <select class="form-select" id="join-goal" required>
+                                            <option value="" selected disabled>Select primary goal...</option>
+                                            <option value="Hypertrophy & Strength">Hypertrophy &amp; Strength Progression</option>
+                                            <option value="Cardiovascular Endurance">Cardiovascular Endurance &amp; Stamina</option>
+                                            <option value="Body Composition & Fat Loss">Body Composition &amp; Conditioning</option>
+                                            <option value="Mobility & Recovery">Athletic Mobility &amp; Active Recovery</option>
+                                            <option value="Holistic Longevity">Sustainable Athletic Longevity</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <label for="join-training" class="form-label">Preferred Training Type <span class="text-danger">*</span></label>
+                                        <select class="form-select" id="join-training" required>
+                                            <option value="" selected disabled>Select preferred training...</option>
+                                            <option value="1-on-1 Personal Training">1-on-1 Dedicated Coaching</option>
+                                            <option value="Independent Sanctuary Training">Independent Sanctuary Access</option>
+                                            <option value="Semi-Private Strength Group">Semi-Private Strength Group</option>
+                                            <option value="Functional & Mobility Sessions">Functional &amp; Mobility Sessions</option>
+                                            <option value="Comprehensive Dual Protocol">Comprehensive Dual Protocol (Strength + Spa)</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12 mt-4">
+                                        <button type="submit" class="btn btn-primary w-100 py-3"><i class="bi bi-arrow-right-circle me-1"></i> Submit Membership Request</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What Our Members Say (Testimonial Section) -->
+        <section id="testimonials" class="section-padding bg-pale-yellow">
+            <div class="container">
+                <div class="text-center mb-5 reveal-on-scroll">
+                    <span class="section-label">MEMBER PERSPECTIVES</span>
+                    <h2 class="section-title">What Our Members Say</h2>
+                    <p class="section-subtitle">Real experiences inside Sai Fitness Gym. Discover how our serene environment and precision facilities transform everyday training.</p>
+                </div>
+
+                <div class="row g-4 reveal-on-scroll">
+                    <div class="col-12 col-md-4">
+                        <div class="testimonial-card">
+                            <div>
+                                <div class="testimonial-rating" aria-label="5 out of 5 stars">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                </div>
+                                <blockquote class="testimonial-quote">
+                                    "Sai Fitness redefined what physical training means to me. The uncrowded floor and architectural calm allow an intensity of focus I have never found in conventional commercial gyms."
+                                </blockquote>
+                            </div>
+                            <div class="testimonial-author-wrap">
+                                <div class="testimonial-avatar">A</div>
+                                <div>
+                                    <div class="testimonial-author-name">Aarav Mehta</div>
+                                    <p class="testimonial-author-role">Executive &bull; Member since 2024</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-4">
+                        <div class="testimonial-card">
+                            <div>
+                                <div class="testimonial-rating" aria-label="5 out of 5 stars">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                </div>
+                                <blockquote class="testimonial-quote">
+                                    "The biomechanical equipment is sublime. Everything from the walnut-finished free weights to the hydrotherapy plunge creates an atmosphere of discipline without friction."
+                                </blockquote>
+                            </div>
+                            <div class="testimonial-author-wrap">
+                                <div class="testimonial-avatar">P</div>
+                                <div>
+                                    <div class="testimonial-author-name">Priya Sundaram</div>
+                                    <p class="testimonial-author-role">Architect &bull; Member since 2023</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-4">
+                        <div class="testimonial-card">
+                            <div>
+                                <div class="testimonial-rating" aria-label="5 out of 5 stars">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                </div>
+                                <blockquote class="testimonial-quote">
+                                    "The personal coaches understand athletic longevity deeply. It is not just about moving weight; it is about cultivating daily discipline and sustainable wellbeing."
+                                </blockquote>
+                            </div>
+                            <div class="testimonial-author-wrap">
+                                <div class="testimonial-avatar">R</div>
+                                <div>
+                                    <div class="testimonial-author-name">Rohan Kapoor</div>
+                                    <p class="testimonial-author-role">Triathlete &bull; Member since 2025</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="testimonial-disclaimer mb-0 mt-4"><i class="bi bi-info-circle me-1"></i> Sample member testimonials curated to demonstrate the Sai Fitness athletic experience.</p>
             </div>
         </section>
 
@@ -362,6 +678,29 @@
             </div>
         </div>
     </footer>
+
+    <!-- Join Success Modal (Frontend Preview) -->
+    <div class="modal fade" id="joinSuccessModal" tabindex="-1" aria-labelledby="joinModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-white border-0">
+                    <h5 class="modal-title font-heading text-warning" id="joinModalLabel"><i class="bi bi-gem me-2"></i> Sai Fitness Sanctuary</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4 text-center">
+                    <div class="rounded-circle bg-light d-inline-flex p-3 text-warning mb-3" style="border: 2px solid var(--color-gold);">
+                        <i class="bi bi-check2-circle display-4"></i>
+                    </div>
+                    <h3 class="font-heading mb-2">Welcome, <span id="join-modal-name" class="text-dark">Athlete</span></h3>
+                    <p class="text-muted">Your membership consultation request has been prepared.</p>
+                    <div class="p-3 bg-light rounded text-start small mb-3 border">
+                        <p class="mb-1 text-muted"><strong>Notice:</strong> This is a frontend demonstration. No backend server or database is attached, and no personal data is stored.</p>
+                    </div>
+                    <button type="button" class="btn btn-primary w-100" data-bs-dismiss="modal">Close Preview</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>

@@ -448,6 +448,110 @@ function initContactForm() {
     });
 }
 
+function initJoinForm() {
+    const joinForm = document.getElementById('join-form');
+    if (!joinForm) return;
+    if (joinForm.getAttribute('data-init') === 'true') return;
+    joinForm.setAttribute('data-init', 'true');
+
+    const nameInput = document.getElementById('join-name');
+    const phoneInput = document.getElementById('join-phone');
+    const emailInput = document.getElementById('join-email');
+    const goalSelect = document.getElementById('join-goal');
+    const trainingSelect = document.getElementById('join-training');
+    const feedbackBanner = document.getElementById('join-feedback');
+    const modalNameSpan = document.getElementById('join-modal-name');
+
+    [nameInput, phoneInput, emailInput, goalSelect, trainingSelect].forEach((field) => {
+        if (!field) return;
+        const eventName = field.tagName === 'SELECT' ? 'change' : 'input';
+        field.addEventListener(eventName, () => Validation.clearError(field));
+    });
+
+    joinForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        Validation.clearAllErrors(joinForm);
+
+        if (feedbackBanner) {
+            feedbackBanner.classList.add('d-none');
+        }
+
+        let firstInvalid = null;
+
+        const nameVal = nameInput ? nameInput.value.trim() : '';
+        if (nameVal.length < 2) {
+            Validation.showError(nameInput, 'Please enter your full name (at least 2 characters).');
+            firstInvalid = firstInvalid || nameInput;
+        }
+
+        const phoneVal = phoneInput ? phoneInput.value.trim() : '';
+        if (!Validation.isValidPhone(phoneVal)) {
+            Validation.showError(phoneInput, 'Please enter a valid phone number (7–15 digits).');
+            firstInvalid = firstInvalid || phoneInput;
+        }
+
+        const emailVal = emailInput ? emailInput.value.trim() : '';
+        if (!Validation.isValidEmail(emailVal)) {
+            Validation.showError(emailInput, 'Please enter a valid email address.');
+            firstInvalid = firstInvalid || emailInput;
+        }
+
+        const goalVal = goalSelect ? goalSelect.value.trim() : '';
+        if (!goalVal) {
+            Validation.showError(goalSelect, 'Please select your primary fitness goal.');
+            firstInvalid = firstInvalid || goalSelect;
+        }
+
+        const trainingVal = trainingSelect ? trainingSelect.value.trim() : '';
+        if (!trainingVal) {
+            Validation.showError(trainingSelect, 'Please select your preferred training format.');
+            firstInvalid = firstInvalid || trainingSelect;
+        }
+
+        if (firstInvalid) {
+            firstInvalid.focus();
+            return;
+        }
+
+        if (modalNameSpan) {
+            modalNameSpan.textContent = nameVal;
+        }
+
+        if (feedbackBanner) {
+            const nameTarget = feedbackBanner.querySelector('.join-feedback-name');
+            if (nameTarget) {
+                nameTarget.textContent = nameVal;
+            }
+            feedbackBanner.classList.remove('d-none');
+        }
+
+        joinForm.reset();
+
+        const modalElem = document.getElementById('joinSuccessModal');
+        if (modalElem && window.bootstrap) {
+            const bsModal = bootstrap.Modal.getOrCreateInstance(modalElem);
+            bsModal.show();
+        } else {
+            Toast.show('Fitness journey request validated (frontend preview only — no data saved).', 'success', 5000);
+        }
+    });
+}
+
+function initVideos() {
+    const videos = document.querySelectorAll('.hero-bg-video, .welcome-video-media');
+    videos.forEach((video) => {
+        video.muted = true;
+        video.playsInline = true;
+
+        const playPromise = video.play();
+        if (playPromise !== undefined) {
+            playPromise.catch(() => {
+                // Autoplay prevented by browser policy; fallback poster remains active.
+            });
+        }
+    });
+}
+
 function initScrollReveal() {
     const revealItems = document.querySelectorAll('.reveal-on-scroll');
     if (revealItems.length === 0) return;
@@ -473,11 +577,19 @@ function initScrollReveal() {
     revealItems.forEach((item) => observer.observe(item));
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    Toast.init();
-    initNavbar();
-    initSmoothScroll();
-    initGallery();
-    initContactForm();
-    initScrollReveal();
-});
+function boot() {
+    try { Toast.init(); } catch (e) { console.error('Toast.init failed:', e); }
+    try { initNavbar(); } catch (e) { console.error('initNavbar failed:', e); }
+    try { initSmoothScroll(); } catch (e) { console.error('initSmoothScroll failed:', e); }
+    try { initVideos(); } catch (e) { console.error('initVideos failed:', e); }
+    try { initGallery(); } catch (e) { console.error('initGallery failed:', e); }
+    try { initContactForm(); } catch (e) { console.error('initContactForm failed:', e); }
+    try { initJoinForm(); } catch (e) { console.error('initJoinForm failed:', e); }
+    try { initScrollReveal(); } catch (e) { console.error('initScrollReveal failed:', e); }
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', boot);
+} else {
+    boot();
+}
